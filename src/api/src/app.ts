@@ -5,6 +5,7 @@ import yaml from "yamljs";
 import { getConfig } from "./config";
 import lists from "./routes/lists";
 import items from "./routes/items";
+import wellKnown from "./routes/well-known";
 import { configureMongoose } from "./models/mongoose";
 import { observability } from "./config/observability";
 
@@ -39,6 +40,9 @@ export const createApp = async (): Promise<Express> => {
     // API Routes
     app.use("/lists/:listId/items", items);
     app.use("/lists", lists);
+    app.use("/favicon.ico", express.static("favicon.ico"));
+    app.use("/openapi.yaml", express.static("openapi.yaml"));
+    app.use("/.well-known", wellKnown);
 
     // Swagger UI
     const swaggerDocument = yaml.load("./openapi.yaml");

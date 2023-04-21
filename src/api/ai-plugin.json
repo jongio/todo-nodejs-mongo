@@ -1,0 +1,17 @@
+{
+  "schema_version": "v1",
+  "name_for_model": "todonodejsmongo",
+  "name_for_human": "ToDo Application",
+  "description_for_model": "A simple ToDo application",
+  "description_for_human": "A simple ToDo app",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "$WEBSITE_HOSTNAME/openapi.yaml"
+  },
+  "logo_url": "$WEBSITE_HOSTNAME/favicon.ico",
+  "contact_email": "hello@contact.com",
+  "legal_info_url": "hello@legal.com"
+}
